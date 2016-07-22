@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://cqxuxiaoping/github.io/2016/07/20/GitHub搭建个人博客网站手册/index.html">
 <meta property="og:site_name" content="表哥的Blog">
 <meta property="og:description" content="前言絮语前两天，我准备打开三年前开复老师孵化的”点点”轻博客，里面有我之前写的好些文章，结果打不开。经了解才知道运营不下去给关闭了。在这种情况下，我又注册了“简书”，准备用来做学习笔记并且分享。偶然发现，“简书”是个好东东，既是轻博客，结合当前形势，还有社交功能——可以很方便地关注你想关注的人、分享你喜欢的东西、自己写的东西；既可以私密保存，又可以发布分享。但是，我又担心什么时候“简书”也给关闭了">
-<meta property="og:updated_time" content="2016-07-22T08:53:16.069Z">
+<meta property="og:updated_time" content="2016-07-22T09:09:32.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="亲历用GitHub+Node+Git搭建个人博客网站手册">
 <meta name="twitter:description" content="前言絮语前两天，我准备打开三年前开复老师孵化的”点点”轻博客，里面有我之前写的好些文章，结果打不开。经了解才知道运营不下去给关闭了。在这种情况下，我又注册了“简书”，准备用来做学习笔记并且分享。偶然发现，“简书”是个好东东，既是轻博客，结合当前形势，还有社交功能——可以很方便地关注你想关注的人、分享你喜欢的东西、自己写的东西；既可以私密保存，又可以发布分享。但是，我又担心什么时候“简书”也给关闭了">
@@ -320,11 +320,9 @@
 </ul>
 <h2 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h2><ul>
 <li>说明<br>1.用途:生成静态页面<br>2.需求:必须  </li>
-<li>搭建步骤<br>1.准备:先自己新建一个文件夹,用于安装存放所有hexo安装文件及自己要写的博客,比如我建的文件是:”E:\blog”<br>2.执行命令技巧:必须的Git和Node.js安装之后,凡是要求在本地执行的命令,均需在Git Bash中运行,方法是:进入第1步新建的文件夹,点击鼠标右键-&gt;Git Bash Here<br>3.操作方法:<a href="http://www.jianshu.com/p/465830080ea9?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">参考资料</a><br>3.1安装hexo:<br>以在我新建的目录”E:\blog”下,点击鼠标右键-&gt;Git Bash Here 为例,运行如下命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install-g hexo</div></pre></td></tr></table></figure>
+<li>搭建步骤<br>1.准备:先自己新建一个文件夹,用于安装存放所有hexo安装文件及自己要写的博客,比如我建的文件是:”E:\blog”<br>2.执行命令技巧:必须的Git和Node.js安装之后,凡是要求在本地执行的命令,均需在Git Bash中运行,方法是:进入第1步新建的文件夹,点击鼠标右键-&gt;Git Bash Here<br>3.操作方法:<a href="http://www.jianshu.com/p/465830080ea9?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">参考资料</a><br>3.1安装hexo:<br>以在我新建的目录”E:\blog”下为例,点击鼠标右键-&gt;Git Bash Here,运行第一行命令:之后再执行第二行命令初始化hexo,完成后安装hexo即完成。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo</div><div class="line">hexo init</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>3.2初始化hexo:依次执行下列命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>完成以上步骤,安装hexo完成  </p>
 <h2 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h2><ul>
 <li>说明<br>1.用途:用来做博客的远程创库、域名、服务器之类<br>2.需求:必须<br>3.<a href="https://github.com/" target="_blank" rel="external">网站链接</a></li>
 <li>注册<br>1.申请方法:这里不再详解,请看他人分享的该部分教程:<a href="http://www.jianshu.com/p/a4b74cc9ff28" target="_blank" rel="external">GitHub账号申请教程</a><br>2.提示:<br>2.1 务必要验证,否则就未注册成功<br>2.1 我最初用网易邮箱申请,一直无法收到验证邮件,不得已换成QQ邮箱终于收到并验证成功  </li>
@@ -337,7 +335,12 @@
 <p>3.正大部署:<br>执行完下列命令,若最后一行为:”INFO  Deploy done: git”则说明成功,就可以进入自己的GitHub域名下查看自己的博客了;<br>4.查看地址:<a href="https://cqxuxiaoping.github.io/,&quot;cqxuxiaoping&quot;是我的登录名,改为自己的即可" target="_blank" rel="external">https://cqxuxiaoping.github.io/,&quot;cqxuxiaoping&quot;是我的登录名,改为自己的即可</a>.<br>5.博客存入目录:<br>E:\blog\source_posts  #”E:\blog”是我建的文件夹,改为自己的即可<br>6.后期部署步骤:在如我的”E:\blog”目录下启动Git Brash 依次执行下列三行命令,”hexo s”命令是预览生成的静博客,搭建好后可以不再用它.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean #清除原静态博客</div><div class="line">hexo g #重新生成最新的博客</div><div class="line">hexo d #将静态博客推送到GitHub代管</div></pre></td></tr></table></figure></p>
 <h2 id="域名"><a href="#域名" class="headerlink" title="域名:"></a>域名:</h2><p>专业玩家可以去购买域名,我等就没必要,略过…  </p>
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题:"></a>主题:</h2><p>若使用默认主题就不需要折腾了,若想要个自己喜欢的主题,要费些周折,具体不表,请看:<a href="http://www.jianshu.com/p/a4b74cc9ff28?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">参考资料</a>  </p>
-<h2 id="添加”多说”评论系统"><a href="#添加”多说”评论系统" class="headerlink" title="添加”多说”评论系统:"></a>添加”多说”评论系统:</h2><h2 id="不详说-看-参考资料"><a href="#不详说-看-参考资料" class="headerlink" title="不详说,看:参考资料  "></a>不详说,看:<a href="http://www.jianshu.com/p/a4b74cc9ff28?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">参考资料</a>  </h2><h2 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h2>
+<h2 id="添加”多说”评论系统"><a href="#添加”多说”评论系统" class="headerlink" title="添加”多说”评论系统:"></a>添加”多说”评论系统:</h2><h2 id="不详说-看-参考资料"><a href="#不详说-看-参考资料" class="headerlink" title="不详说,看:参考资料  "></a>不详说,看:<a href="http://www.jianshu.com/p/a4b74cc9ff28?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">参考资料</a>  </h2><h2 id="感谢及其他"><a href="#感谢及其他" class="headerlink" title="感谢及其他:"></a>感谢及其他:</h2><ul>
+<li>感谢上述链接参考资料作者,没有他们的分享参考,我无搭建成功!  </li>
+<li>欢迎访问本人搭建的博客:<a href="https://cqxuxiaoping.github.io/[链接地址](https://cqxuxiaoping.github.io/" target="_blank" rel="external">https://cqxuxiaoping.github.io/[链接地址](https://cqxuxiaoping.github.io/</a>)</li>
+<li>因博客托管在GitHub,服务器在美国,速度不会快,要有耐心,:-)</li>
+</ul>
+
       
     </div>
 
@@ -472,7 +475,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言絮语"><span class="nav-number">1.</span> <span class="nav-text">前言絮语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用准备"><span class="nav-number">2.</span> <span class="nav-text">应用准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo搭建"><span class="nav-number">3.</span> <span class="nav-text">hexo搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册GitHub"><span class="nav-number">4.</span> <span class="nav-text">注册GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置文件"><span class="nav-number">5.</span> <span class="nav-text">修改配置文件:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">6.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名"><span class="nav-number">7.</span> <span class="nav-text">域名:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">8.</span> <span class="nav-text">主题:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加”多说”评论系统"><span class="nav-number">9.</span> <span class="nav-text">添加”多说”评论系统:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不详说-看-参考资料"><span class="nav-number">10.</span> <span class="nav-text">不详说,看:参考资料  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续……"><span class="nav-number">11.</span> <span class="nav-text">未完待续……</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言絮语"><span class="nav-number">1.</span> <span class="nav-text">前言絮语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用准备"><span class="nav-number">2.</span> <span class="nav-text">应用准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo搭建"><span class="nav-number">3.</span> <span class="nav-text">hexo搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册GitHub"><span class="nav-number">4.</span> <span class="nav-text">注册GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置文件"><span class="nav-number">5.</span> <span class="nav-text">修改配置文件:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">6.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名"><span class="nav-number">7.</span> <span class="nav-text">域名:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">8.</span> <span class="nav-text">主题:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加”多说”评论系统"><span class="nav-number">9.</span> <span class="nav-text">添加”多说”评论系统:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不详说-看-参考资料"><span class="nav-number">10.</span> <span class="nav-text">不详说,看:参考资料  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢及其他"><span class="nav-number">11.</span> <span class="nav-text">感谢及其他:</span></a></li></ol></div>
             
           </div>
         </section>
