@@ -276,18 +276,85 @@
 </ul>
 <p>hexo init<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">完成以上步骤,安装hexo完成  </div><div class="line">3.3部署  </div><div class="line">3.3.1生成静态页面,执行命令:</div></pre></td></tr></table></figure></p>
 <p>hexo generate #可简写:hexo g<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">若最后结果行为:&quot;INFO  Deploy done: git&quot;则说明成功  </div><div class="line">注意:必须到你新建的hexo安装目录下,如我的&quot;E:\blog&quot;执行，否则不成功  </div><div class="line">3.3.2本地启动测试</div></pre></td></tr></table></figure></p>
-<p>hexo server  #简写为:hexo s<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">此时应该是404页面,还需要后续配置:    </div><div class="line">3.3.3修改配置文件  </div><div class="line">如在我的目录&quot;E:\blog&quot;下找到配置文件&quot;_config.yml&quot;,用&quot;Notepad++&quot;打开编辑  </div><div class="line">我在这里遇到大坑,这个文件里没啥内容,还是在网上找了两个进行合并的,分享如下:</div></pre></td></tr></table></figure></p>
-<h1 id="Hexo-Configuration"><a href="#Hexo-Configuration" class="headerlink" title="Hexo Configuration"></a>Hexo Configuration</h1><h2 id="Docs-http-hexo-io-docs-configuration-html"><a href="#Docs-http-hexo-io-docs-configuration-html" class="headerlink" title="Docs: http://hexo.io/docs/configuration.html"></a>Docs: <a href="http://hexo.io/docs/configuration.html" target="_blank" rel="external">http://hexo.io/docs/configuration.html</a></h2><h2 id="Source-https-github-com-hexojs-hexo"><a href="#Source-https-github-com-hexojs-hexo" class="headerlink" title="Source: https://github.com/hexojs/hexo/"></a>Source: <a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">https://github.com/hexojs/hexo/</a></h2><h1 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h1><p>title: 表哥的Blog ##站点标题<br>subtitle: Used for personal learning notes and sharing. ##站点副标题<br>description: Life is to record! ##站点描述<br>author: 表哥 ##作者<br>language: zh-Hans ##语言包，需要主题自带才可设置。如Jcaman自带简繁英，设置简体中文一般填入 zh-CN,但我的主题NexT文档介绍的语言包是:zh-Hans<br>timezone:</p>
-<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h2 id="If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><a href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘" class="headerlink" title="If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘"></a>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child" target="_blank" rel="external">http://yoursite.com/child</a>‘ and root as ‘/child/‘</h2><p>url: <a href="http://cqxuxiaoping/github.io">http://cqxuxiaoping/github.io</a> ##改为自己的站点域名<br>root: /<br>permalink: :year/:month/:day/:title/ ##文章永久链接格式，可添加.html后缀，如 :title.html<br>permalink_defaults:</p>
-<h1 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h1><p>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads/code<br>i18n_dir: :lang<br>skip_render:</p>
-<h1 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h1><p>new_post_name: :title.md # File name of new posts<br>default_layout: post<br>titlecase: false # Transform title into titlecase<br>external_link: true # Open external links in new tab<br>filename_case: 0<br>render_drafts: false<br>post_asset_folder: false<br>relative_link: false<br>future: true<br>highlight:<br> enable: true<br> line_number: true<br> tab_replace:</p>
-<h1 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h1><p>default_category: uncategorized<br>category_map:<br>tag_map:</p>
-<h1 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h1><h2 id="Hexo-uses-Moment-js-to-parse-and-display-date"><a href="#Hexo-uses-Moment-js-to-parse-and-display-date" class="headerlink" title="Hexo uses Moment.js to parse and display date"></a>Hexo uses Moment.js to parse and display date</h2><h2 id="You-can-customize-the-date-format-as-defined-in"><a href="#You-can-customize-the-date-format-as-defined-in" class="headerlink" title="You can customize the date format as defined in"></a>You can customize the date format as defined in</h2><h2 id="http-momentjs-com-docs-displaying-format"><a href="#http-momentjs-com-docs-displaying-format" class="headerlink" title="http://momentjs.com/docs/#/displaying/format/"></a><a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/</a></h2><p>date_format: YYYY-MM-DD<br>time_format: HH:mm:ss</p>
-<h1 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h1><h2 id="Set-per-page-to-0-to-disable-pagination"><a href="#Set-per-page-to-0-to-disable-pagination" class="headerlink" title="Set per_page to 0 to disable pagination"></a>Set per_page to 0 to disable pagination</h2><p>per_page: 5 ##设置每页显示文章数<br>pagination_dir: page</p>
-<h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><p>#Plugins: <a href="http://hexo.io/plugins/" target="_blank" rel="external">http://hexo.io/plugins/</a></p>
-<h2 id="Themes-http-hexo-io-themes"><a href="#Themes-http-hexo-io-themes" class="headerlink" title="Themes: http://hexo.io/themes/"></a>Themes: <a href="http://hexo.io/themes/" target="_blank" rel="external">http://hexo.io/themes/</a></h2><p>theme: NexT ##修改为自己当前的主题名称</p>
-<h1 id="Archives-默认值为2，如果这里都修改为1，相应页面就只会列出标题，而非全文-2-Enable-pagination-1-Disable-pagination-Fully-Disable"><a href="#Archives-默认值为2，如果这里都修改为1，相应页面就只会列出标题，而非全文-2-Enable-pagination-1-Disable-pagination-Fully-Disable" class="headerlink" title="Archives 默认值为2，如果这里都修改为1，相应页面就只会列出标题，而非全文(2: Enable pagination,1: Disable pagination,Fully Disable)"></a>Archives 默认值为2，如果这里都修改为1，相应页面就只会列出标题，而非全文(2: Enable pagination,1: Disable pagination,Fully Disable)</h1><p>archive: 1<br>category: 1<br>tag: 1</p>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><p>#Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br> type: git #此处有的是:github<br> repo: <a href="https://github.com/cqxuxiaoping/cqxuxiaoping.github.io.git" target="_blank" rel="external">https://github.com/cqxuxiaoping/cqxuxiaoping.github.io.git</a> ##自己在GitHub注册的,按此格式改写即可<br> branch: master<br>    ```</p>
+<p>hexo server  #简写为:hexo s<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">此时应该是404页面,还需要后续配置:    </div><div class="line">3.3.3修改配置文件  </div><div class="line">如在我的目录&quot;E:\blog&quot;下找到配置文件&quot;_config.yml&quot;,用&quot;Notepad++&quot;打开编辑;  </div><div class="line">我在这里遇到了大坑,这个文件里没啥内容,还是在网上找了两个进行合并的配置的,分享如下,自己做适当改写即可:</div></pre></td></tr></table></figure></p>
+<pre><code># Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 表哥的Blog ##站点标题
+subtitle: Used for personal learning notes and sharing. ##站点副标题
+description: Life is to record! ##站点描述
+author: 表哥 ##作者
+language: zh-Hans ##语言包，需要主题自带才可设置。如Jcaman自带简繁英，设置简体中文一般填入 zh-CN,但我的主题NexT文档介绍的语言包是:zh-Hans
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+url: http://cqxuxiaoping/github.io ##改为自己的站点域名
+root: /
+permalink: :year/:month/:day/:title/ ##文章永久链接格式，可添加.html后缀，如 :title.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+ enable: true
+ line_number: true
+ tab_replace:
+
+# Category &amp; Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 5 ##设置每页显示文章数
+pagination_dir: page
+
+# Extensions
+#Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: NexT ##修改为自己当前的主题名称
+
+# Archives 默认值为2，如果这里都修改为1，相应页面就只会列出标题，而非全文(2: Enable pagination,1: Disable pagination,Fully Disable)
+archive: 1
+category: 1
+tag: 1
+
+# Deployment
+#Docs: http://hexo.io/docs/deployment.html
+deploy:
+ type: git #此处有的是:github
+ repo: https://github.com/cqxuxiaoping/cqxuxiaoping.github.io.git ##自己在GitHub注册的,按此格式改写即可,我的用户名是:cqxuxiaoping
+ branch: master
+</code></pre><p>```</p>
 <h2 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h2><ul>
 <li>说明<br>1.用途:用来做博客的远程创库、域名、服务器之类<br>2.需求:必须<br>3.<a href="https://github.com/" target="_blank" rel="external">网站链接</a></li>
 <li>注册<br>1.申请方法:这里不再详解,请看他人分享的该部分教程:<a href="http://www.jianshu.com/p/a4b74cc9ff28" target="_blank" rel="external">GitHub账号申请教程</a><br>2.提示:<br>2.1 务必要验证,否则就未注册成功<br>2.1 我最初用网易邮箱申请,一直无法收到验证邮件,不得已换成QQ邮箱终于收到并验证成功  </li>
