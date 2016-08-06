@@ -4,6 +4,131 @@
   
     
     <entry>
+      <title><![CDATA[Python学习笔记(2):数据类型]]></title>
+      <url>http://cqxuxiaoping/github.io/2016/08/06/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2)%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<p>计算机顾名思义就是可以做数学计算的机器，因此，计算机程序理所当然地可以处理各种数值。但是，计算机能处理的远不止数值，还可以处理文本、图形、音频、视频、网页等各种各样的数据，不同的数据，需要定义不同的数据类型。在Python中，能够直接处理的数据类型有以下几种：</p>
+<p>##整数:int<br>Python可以处理任意大小的整数，当然包括负整数，在程序中的表示方法和数学上的写法一模一样，例如：1，100，-8080，0，等等。</p>
+<p>计算机由于使用二进制，所以，有时候用十六进制表示整数比较方便，十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2，等等。</p>
+<p>##浮点数:Float<br>浮点数也就是小数，之所以称为浮点数，是因为按照科学记数法表示时，一个浮点数的小数点位置是可变的，比如，1.23x109和12.3x108是完全相等的。浮点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x109就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5，等等。</p>
+<p>整数和浮点数在计算机内部存储的方式是不同的，整数运算永远是精确的（除法难道也是精确的？是的！），而浮点数运算则可能会有四舍五入的误差。</p>
+<p>##字符串:String<br>字符串是以单引号’或双引号”括起来的任意文本，比如’abc’，”xyz”等等。请注意，’’或””本身只是一种表示方式，不是字符串的一部分，因此，字符串’abc’只有a，b，c这3个字符。如果’本身也是一个字符，那就可以用””括起来，比如”I’m OK”包含的字符是I，’，m，空格，O，K这6个字符。</p>
+<p>#####如果字符串内部既包含’又包含”怎么办？可以用转义字符\来标识，比如：</p>
+<pre><code>&apos;I\&apos;m \&quot;OK\&quot;!&apos;
+</code></pre><p>表示的字符串内容是：</p>
+<pre><code>I&apos;m &quot;OK&quot;!
+</code></pre><p>#####转义字符\可以转义很多字符，比如\n表示换行，\t表示制表符，字符\本身也要转义，所以\表示的字符就是\，可以在Python的交互式命令行用print()打印字符串看看：</p>
+<pre><code>print(&apos;I\&apos;m ok.&apos;)
+I&apos;m ok.
+
+print(&apos;I\&apos;m learning\nPython.&apos;)
+I&apos;m learning
+Python.
+
+print(&apos;\\\n\\&apos;)
+\
+\
+</code></pre><p>#####如果字符串里面有很多字符都需要转义，就需要加很多\，为了简化，Python还允许用r’’表示’’内部的字符串默认不转义，可以自己试试：</p>
+<pre><code> print(&apos;\\\t\\&apos;)
+\       \
+
+print(r&apos;\\\t\\&apos;)
+\\\t\\
+</code></pre><p>#####如果字符串内部有很多换行，用\n写在一行里不好阅读，为了简化，Python允许用’’’…’’’的格式表示多行内容，可以自己试试：</p>
+<pre><code> print(&apos;&apos;&apos;line1
+... line2
+... line3&apos;&apos;&apos;)
+line1
+line2
+line3
+</code></pre><p>上面是在交互式命令行内输入，注意在输入多行内容时，提示符由&gt;&gt;&gt;变为…，提示你可以接着上一行输入。如果写成程序，就是：</p>
+<pre><code>print(&apos;&apos;&apos;line1
+line2
+line3&apos;&apos;&apos;)
+</code></pre><p>多行字符串’’’…’’’还可以在前面加上r使用:</p>
+<pre><code>print(r&apos;&apos;&apos;line1
+line2
+line3&apos;&apos;&apos;)
+</code></pre><p>结果如下:</p>
+<pre><code>line1
+line2
+line3
+</code></pre><p>##布尔值:Boolean<br>布尔值和布尔代数的表示完全一致，一个布尔值只有True(1)、False(0)两种值，要么是True，要么是False，在Python中，可以直接用True、False表示布尔值（请注意大小写），也可以通过布尔运算计算出来：</p>
+<blockquote>
+<p>True<br>True</p>
+<p>False<br>False</p>
+<p>3 &gt; 2<br>True</p>
+<p>3 &gt; 5<br>False</p>
+</blockquote>
+<p><strong>布尔值可以用and、or和not运算</strong></p>
+<ul>
+<li>and运算是与运算，只有所有都为True，and运算结果才是True：</li>
+</ul>
+<blockquote>
+<p>True and True<br>True</p>
+<p>True and False<br>False</p>
+<p>False and False<br>False</p>
+<p>5 &gt; 3 and 3 &gt; 1<br>True</p>
+</blockquote>
+<ul>
+<li>or运算是或运算，只要其中有一个为True，or运算结果就是True：</li>
+</ul>
+<blockquote>
+<p>True or True<br>True</p>
+<p>True or False<br>True</p>
+<p>False or False<br>False</p>
+<p>5 &gt; 3 or 1 &gt; 3<br>True</p>
+</blockquote>
+<ul>
+<li>not运算是非运算，它是一个单目运算符，把True变成False，False变成True：</li>
+</ul>
+<blockquote>
+<p>not True<br>False</p>
+<p>not False<br>True</p>
+<p>not 1 &gt; 2<br>True</p>
+</blockquote>
+<ul>
+<li>布尔值经常用在条件判断中，比如：</li>
+</ul>
+<pre><code>if age &gt;= 18:
+    print(&apos;adult&apos;)
+else:
+    print(&apos;teenager&apos;)
+</code></pre><p>##空值:None</p>
+<ul>
+<li><p>值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。</p>
+</li>
+<li><p>此外，Python还提供了列表、字典等多种数据类型，还允许创建自定义数据类型。</p>
+</li>
+</ul>
+<p>##数据类型及转换</p>
+<ol>
+<li>整数型：int</li>
+<li>字符型（文本型）：str</li>
+<li>浮点型（一定有小数位）：float</li>
+<li>三种类型的相互转换</li>
+</ol>
+<ul>
+<li>浮点型转为整数型：Int(12.124)=12</li>
+<li>字符型转为整数型：Int(‘12’)=12</li>
+<li>整数型转为字符型：Str(123)=’123’</li>
+<li>浮点型转为字符型：Str(12.123)=’12.123’</li>
+<li>整数型转为浮点型：Float(12)=12.0</li>
+<li>字符型转为浮点型：Float(’12.123’)=12.123</li>
+</ul>
+<p>##小结:</p>
+<ul>
+<li><p>Python支持多种数据类型，在计算机内部，可以把任何数据都看成一个“对象”，而变量就是在程序中用来指向这些数据对象的，对变量赋值就是把数据和变量给关联起来。</p>
+</li>
+<li><p><strong>注意</strong>：Python的整数没有大小限制，而某些语言的整数根据其存储长度是有大小限制的，例如Java对32位整数的范围限制在-2147483648-2147483647。</p>
+</li>
+<li><p>Python的浮点数也没有大小限制，但是超出一定范围就直接表示为inf（无限大）。</p>
+</li>
+</ul>
+<p>此为摘录并有添加,版权属于原作者,详细移步:<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431658624177ea4f8fcb06bc4d0e8aab2fd7aa65dd95000" target="_blank" rel="external">摘录链接</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python学习笔记(1):常用技巧]]></title>
       <url>http://cqxuxiaoping/github.io/2016/08/06/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
       <content type="html"><![CDATA[<p><strong>1.Pycharm快捷键</strong></p>
