@@ -24,29 +24,23 @@
 </blockquote>
 <p><strong>4.转义符\</strong></p>
 <ul>
-<li><p>反斜杠\为转义符,让其后的符号输出本身,如:</p>
-<pre><code>print(&quot;I\&apos;m a sexy man! &quot;)
+<li>反斜杠\为转义符,让其后的符号输出本身,如:<pre><code>print(&quot;I\&apos;m a sexy man! &quot;)
+</code></pre>结果为:<pre><code>I&apos;m a sexy man!
 </code></pre></li>
-</ul>
-<p>结果为:</p>
-<pre><code>I&apos;m a sexy man!
-</code></pre><ul>
-<li><p>字母r放的字符串引号前面,可以让字符串内的全部符号输出本身,如:</p>
-<pre><code>print(r&quot;你,\n给我等着...\n滚!&quot;)
-</code></pre></li>
-</ul>
-<p>结果为:</p>
-<pre><code>你,\n给我等着...\n滚!
-</code></pre><p>对比下面:</p>
-<pre><code>print(&quot;你,\n给我等着...\n滚!&quot;)
-</code></pre><p>结果为:</p>
-<pre><code>你,
+<li>字母r放的字符串引号前面,可以让字符串内的全部符号输出本身,如:<pre><code>print(r&quot;你,\n给我等着...\n滚!&quot;)
+</code></pre>结果为:<pre><code>你,\n给我等着...\n滚!
+</code></pre>对比下面:<pre><code>print(&quot;你,\n给我等着...\n滚!&quot;)
+</code></pre>结果为:<pre><code>你,
 给我等着...
 滚!
-</code></pre><p><strong>5.四舍五入</strong></p>
+</code></pre></li>
+</ul>
+<p><strong>5.四舍五入</strong></p>
 <p>收整函数ROUND(参数1,参数2),如:</p>
-<pre><code>ROUND(1.23)=1
-</code></pre><p>即该函数无第二个参数即是取整</p>
+<blockquote>
+<p>round(1.23,1)=1.2<br>ROUND(1.23)=1</p>
+</blockquote>
+<p>即该函数无第二个参数即是四舍五入取整</p>
 ]]></content>
     </entry>
     
