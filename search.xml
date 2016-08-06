@@ -4,53 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[Python学习笔记(1):常用技巧]]></title>
-      <url>http://cqxuxiaoping/github.io/2016/08/06/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-      <content type="html"><![CDATA[<p><strong>1.Pycharm快捷键</strong></p>
-<ul>
-<li>注释(取消注释):CTRL+/</li>
-<li>批量缩进:TAB</li>
-<li>批量取消缩进:shift+TAB</li>
-<li>恢复操作:CTRL+Z</li>
-</ul>
-<p><strong>2.求商取整</strong></p>
-<p>(商舍去小数只取整数),用双斜杠,即双除//,对比:</p>
-<blockquote>
-<p>9//2=4<br>9/2=4.5</p>
-</blockquote>
-<p><strong>3.乘/幂</strong></p>
-<blockquote>
-<p>2*3=6<br>2**3=8</p>
-</blockquote>
-<p><strong>4.转义符\</strong></p>
-<ul>
-<li><p>反斜杠\为转义符,让其后的符号输出本身,如:</p>
-<p>  print(“I\’m a sexy man! “)</p>
-</li>
-</ul>
-<p>结果为:</p>
-<pre><code>I&apos;m a sexy man!
-</code></pre><ul>
-<li><p>字母r放的字符串引号前面,可以让字符串内的全部符号输出本身,如:</p>
-<p>  print(r”你,\n给我等着…\n滚!”)</p>
-</li>
-</ul>
-<p>结果为:</p>
-<pre><code>你,\n给我等着...\n滚!
-</code></pre><p>对比下面:</p>
-<pre><code>print(&quot;你,\n给我等着...\n滚!&quot;)
-</code></pre><p>结果为:</p>
-<pre><code>你,
-给我等着...
-滚!
-</code></pre><p><strong>5.四舍五入</strong></p>
-<p>收整函数ROUND(参数1,参数2),如:</p>
-<pre><code>ROUND(1.23)=1
-</code></pre><p>即该函数无第二个参数即是取整</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[用GitHub+Hexo搭建个人博客网站指南(Window版)]]></title>
       <url>http://cqxuxiaoping/github.io/2016/07/20/GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%89%8B%E5%86%8C/</url>
       <content type="html"><![CDATA[<h2 id="前言絮语"><a href="#前言絮语" class="headerlink" title="前言絮语"></a>前言絮语</h2><p>前两天，我准备打开三年前开复老师孵化的”点点”轻博客，里面有我之前写的好些文章，结果打不开。才知道是运营不下去给关闭了。在这种情况下，我又注册了“简书”，准备用来做学习笔记并且分享之用。偶然才发现，“简书”是个好东东，既是轻博客，还结合当前形势开发有社交功能——可以很方便地关注你想关注的人、分享你喜欢的东西和自己写的东西；既可以私密保存，又可以发布分享。我又担心什么时候“简书”也给关闭了呢。于是乎，想起Python课程kingname老师所说的“几乎每个程序猿都有个GitHub账号”,无意之中了解了一下，就参照“简书”里他人分享的博客，加上勾搭度娘，利用白天工作的闲散时间及两个晚上的休息时间，前后合计花费十多个小时终于搭建好了目前这个样式的个人博客网站。其中遇到了非常多的坑坑，自己都一一查找资料反复试验解决掉。当然，还有些小功能还有待完善，比如七牛图片引用等还未完成，主要框架搭建好了，后续再努力搭建。</p>
