@@ -124,24 +124,20 @@ else:
     <entry>
       <title><![CDATA[Python学习笔记(1):常用技巧]]></title>
       <url>http://cqxuxiaoping/github.io/2016/08/06/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-      <content type="html"><![CDATA[<p><strong>1.Pycharm快捷键</strong></p>
-<ul>
+      <content type="html"><![CDATA[<h2 id="Pycharm快捷键"><a href="#Pycharm快捷键" class="headerlink" title="Pycharm快捷键"></a>Pycharm快捷键</h2><ul>
 <li>注释(取消注释):CTRL+/</li>
 <li>批量缩进:TAB</li>
 <li>批量取消缩进:shift+TAB</li>
 <li>恢复操作:CTRL+Z</li>
 </ul>
-<p><strong>2.求商取整</strong></p>
-<p>(商舍去小数只取整数),用双斜杠,即双除//,对比:</p>
+<h2 id="求商取整"><a href="#求商取整" class="headerlink" title="求商取整"></a>求商取整</h2><p>(商舍去小数只取整数),用双斜杠,即双除//,对比:</p>
 <blockquote>
 <p>9//2=4<br>9/2=4.5</p>
 </blockquote>
-<p><strong>3.乘/幂</strong></p>
-<blockquote>
+<h2 id="乘-幂"><a href="#乘-幂" class="headerlink" title="乘/幂"></a>乘/幂</h2><blockquote>
 <p>2*3=6<br>2**3=8</p>
 </blockquote>
-<p><strong>4.转义符\</strong></p>
-<ul>
+<h2 id="转义符"><a href="#转义符" class="headerlink" title="转义符\"></a>转义符\</h2><ul>
 <li>反斜杠\为转义符,让其后的符号输出本身,如:<pre><code>print(&quot;I\&apos;m a sexy man! &quot;)
 </code></pre>结果为:<pre><code>I&apos;m a sexy man!
 </code></pre></li>
@@ -153,12 +149,62 @@ else:
 滚!
 </code></pre></li>
 </ul>
-<p><strong>5.四舍五入</strong></p>
-<p>收整函数ROUND(参数1,参数2),如:</p>
+<h2 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h2><p>收整函数ROUND(参数1,参数2),如:</p>
 <blockquote>
 <p>round(1.23,1)=1.2<br>ROUND(1.23)=1</p>
 </blockquote>
 <p>即该函数无第二个参数即是四舍五入取整</p>
+<h2 id="print用法详解"><a href="#print用法详解" class="headerlink" title="print用法详解"></a>print用法详解</h2><ul>
+<li>说明文档</li>
+</ul>
+<blockquote>
+<p>def print(<em>args, <strong>kwargs): # known special case of print<br>“””<br>print(value, …, sep=’ ‘, end=’\n’, file=sys.stdout)<br>Prints the values to a stream, or to sys.stdout by default. Optional keyword arguments:  
+</strong>file<strong>: a file-like object (stream); defaults to the current sys.stdout.   
+</strong>sep<strong>: string inserted between values, default a space.   
+</strong>end*</em>: string appended after the last value, default a newline.<br> “”” </p>
+</blockquote>
+<p> 即:print就是可以带参数的.</p>
+<ul>
+<li>参数end:</li>
+</ul>
+<p>结尾符,默认为回车:\n</p>
+<pre><code>print(&apos;hello1&apos;)
+print(&apos;hello2&apos;, end=&quot;\n&quot;)
+print(&apos;hello3&apos;)
+print(&apos;hello4&apos;, end=&quot;&quot;) #这是空字符串
+print(&apos;hello5&apos;)
+print(&apos;hello6&apos;, end=&quot; &quot;) #这是空格
+print(&apos;hello7&apos;)
+</code></pre><p>结果为:</p>
+<pre><code>hello1
+hello2
+hello3
+hello4hello5
+hello6 hello7
+</code></pre><ul>
+<li><strong>参数:sep</strong></li>
+</ul>
+<p>各个值之间的连接符，默认是空格:” “</p>
+<pre><code>print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;) 
+print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot; &quot;) #一个空格
+print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot;  &quot;) #两个空格
+print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot;+&quot;) 
+print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot;-&quot;) 
+print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot;+-*/&quot;)
+</code></pre><p>结果为:</p>
+<pre><code>hello hello hello
+hello hello hello
+hello  hello  hello
+hello+hello+hello
+hello-hello-hello
+hello+-*/hello+-*/hello
+</code></pre><ul>
+<li><strong>参数:file</strong></li>
+</ul>
+<p>file参数就是把print的结果输出到哪里去的作用。默认是系统标准输出，就是在交互shell里输出。</p>
+<pre><code>with open(&apos;print_output.txt&apos;,&apos;w&apos;) as f:
+     print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot;+-*/&quot;, file=f)
+</code></pre><p><strong>摘录自:</strong><a href="http://www.jianshu.com/p/1cb5ac8d8a6e?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">链接</a></p>
 ]]></content>
     </entry>
     
