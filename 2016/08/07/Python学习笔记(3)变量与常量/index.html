@@ -106,7 +106,7 @@ t_007 = &amp;apos;T007&amp;apos;
 Answer = True
 变量Answer是一个布尔值True。
 2.变量的赋值在Python中，等号=是赋值语句，可以把">
-<meta property="og:updated_time" content="2016-08-07T13:51:50.759Z">
+<meta property="og:updated_time" content="2016-08-07T13:59:21.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记(3)变量与常量">
 <meta name="twitter:description" content="变量1. 变量的类型变量不仅可以是数字，还可以是任意数据类型。
@@ -416,28 +416,27 @@ print(b)
 </blockquote>
 <h3 id="3-变量的占位替换-也叫”格式化”"><a href="#3-变量的占位替换-也叫”格式化”" class="headerlink" title="3. 变量的占位替换(也叫”格式化”)"></a>3. 变量的占位替换(也叫”格式化”)</h3><h4 id="3-1-方式"><a href="#3-1-方式" class="headerlink" title="3.1 %方式"></a>3.1 <code>%</code>方式</h4><p><code>%</code>运算符就是用来格式化字符串的。在字符串内部，<code>%s</code>表示用字符串替换，<code>%d</code>表示用整数替换，有几个<code>%?</code>占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个<code>%?</code>，括号可以省略。</p>
 <ul>
-<li><code>%s</code>表示<code>表示用字符串替换</code></li>
+<li><strong><code>%s</code>表示用字符串替换</strong></li>
 </ul>
 <p>如果不太确定应该用什么，<code>%s</code>永远起作用，它会把任何数据类型转换为字符串：</p>
 <pre><code>&quot;今天星期%s,气温%s度&quot; % (&quot;三&quot;,28.9)
 </code></pre><p>结果为:</p>
 <pre><code>&apos;今天星期三,气温28.9度&apos;
 </code></pre><ul>
-<li><strong><code>%d</code>表示<code>用整数型替换</code></strong></li>
+<li><strong><code>%d</code>表示用整数型替换</strong></li>
 </ul>
 <p>格式化整数还可以指定是否补0、整数的位数</p>
 <pre><code>&apos;%2d-%02d&apos; % (3, 1)
 </code></pre><p>结果为:</p>
 <pre><code>&apos; 3-01&apos; # 注意,3前面有个空格
 </code></pre><ul>
-<li><strong><code>%f</code>表示<code>用浮点型替换</code></strong></li>
+<li><strong><code>%f</code>表示用浮点型替换</strong></li>
 </ul>
 <p>格式化浮点数还可以指定小数的位数</p>
 <pre><code>&apos;%.2f&apos; % 3.1415926
 </code></pre><p>结果为:</p>
 <pre><code>&apos;3.14&apos;
-</code></pre><p>####3.2  <code>{}.format()</code>方式</p>
-<p>用花括号<code>{}</code>占位,再用<code>format()</code>带入(可批量带入,数据类型自适应)</p>
+</code></pre><h4 id="3-2-format-方式"><a href="#3-2-format-方式" class="headerlink" title="3.2 {}.format()方式"></a>3.2 <code>{}.format()</code>方式</h4><p>用花括号<code>{}</code>占位,再用<code>format()</code>带入(可批量带入,数据类型自适应)</p>
 <pre><code>&apos;今天是{}年{}月{}日,星期{},天气{},气温{}度&apos;.format(2016,4,26,&apos;二&apos;,&apos;晴&apos;,23.25)
 </code></pre><p>结果为:</p>
 <pre><code>&apos;今天是2016年4月26日,星期二,天气晴,气温23.25度&apos;
@@ -622,7 +621,7 @@ print(b)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量的类型"><span class="nav-number">1.1.</span> <span class="nav-text">1. 变量的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-变量的赋值"><span class="nav-number">1.2.</span> <span class="nav-text">2.变量的赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-变量的占位替换-也叫”格式化”"><span class="nav-number">1.3.</span> <span class="nav-text">3. 变量的占位替换(也叫”格式化”)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-方式"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 %方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">2.</span> <span class="nav-text">常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一种除法是"><span class="nav-number">2.0.1.</span> <span class="nav-text">一种除法是/:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#还有一种除法是"><span class="nav-number">2.0.2.</span> <span class="nav-text">还有一种除法是//</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#余数运算-，可以得到两个整数相除的余数："><span class="nav-number">2.1.</span> <span class="nav-text">余数运算%，可以得到两个整数相除的余数：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量的类型"><span class="nav-number">1.1.</span> <span class="nav-text">1. 变量的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-变量的赋值"><span class="nav-number">1.2.</span> <span class="nav-text">2.变量的赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-变量的占位替换-也叫”格式化”"><span class="nav-number">1.3.</span> <span class="nav-text">3. 变量的占位替换(也叫”格式化”)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-方式"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 %方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-format-方式"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 {}.format()方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">2.</span> <span class="nav-text">常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一种除法是"><span class="nav-number">2.0.1.</span> <span class="nav-text">一种除法是/:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#还有一种除法是"><span class="nav-number">2.0.2.</span> <span class="nav-text">还有一种除法是//</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#余数运算-，可以得到两个整数相除的余数："><span class="nav-number">2.1.</span> <span class="nav-text">余数运算%，可以得到两个整数相除的余数：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
