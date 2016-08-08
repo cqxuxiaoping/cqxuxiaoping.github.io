@@ -300,7 +300,32 @@ hello+-*/hello+-*/hello
 <p>file参数就是把print的结果输出到哪里去的作用。默认是系统标准输出，就是在交互shell里输出。</p>
 <pre><code>with open(&apos;print_output.txt&apos;,&apos;w&apos;) as f:
      print(&apos;hello&apos;, &apos;hello&apos;, &apos;hello&apos;, sep=&quot;+-*/&quot;, file=f)
-</code></pre><p><strong>摘录自:</strong><a href="http://www.jianshu.com/p/1cb5ac8d8a6e?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">链接</a></p>
+</code></pre><p>###Python的字符串编码转换<br>搞清楚了令人头疼的字符编码问题后，我们再来研究Python的字符串。</p>
+<p>在最新的Python 3版本中，字符串是以Unicode编码的，也就是说，Python的字符串支持多语言，例如：</p>
+<blockquote>
+<p>print(‘包含中文的str’)<br>包含中文的str</p>
+</blockquote>
+<p>对于单个字符的编码，Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ord(&apos;A&apos;)</div><div class="line">65</div><div class="line"></div><div class="line">ord(&apos;中&apos;)</div><div class="line">20013</div><div class="line"></div><div class="line">chr(66)</div><div class="line">&apos;B&apos;</div><div class="line"></div><div class="line">chr(25991)</div><div class="line">&apos;文&apos;</div></pre></td></tr></table></figure>
+<p>如果知道字符的整数编码，还可以用十六进制这么写str：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;\u4e2d\u6587&apos;</div><div class="line">&apos;中文&apos;</div></pre></td></tr></table></figure></p>
+<p>两种写法完全是等价的。</p>
+<p>由于Python的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。</p>
+<p>Python对bytes类型的数据用带b前缀的单引号或双引号表示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x = b&apos;ABC&apos;</div></pre></td></tr></table></figure></p>
+<p>要注意区分’ABC’和b’ABC’，前者是str，后者虽然内容显示得和前者一样，但bytes的每个字符都只占用一个字节。</p>
+<p><strong>以Unicode表示的str通过encode()方法可以编码为指定的bytes</strong>，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&apos;ABC&apos;.encode(&apos;ascii&apos;)</div><div class="line">b&apos;ABC&apos;</div><div class="line"></div><div class="line">&apos;中文&apos;.encode(&apos;utf-8&apos;)</div><div class="line">b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;</div><div class="line"></div><div class="line">&apos;中文&apos;.encode(&apos;ascii&apos;)</div><div class="line">Traceback (most recent call last):</div><div class="line">File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-1: ordinal not in range(128)</div></pre></td></tr></table></figure></p>
+<p>纯英文的str可以用ASCII编码为bytes，内容是一样的，含有中文的str可以用UTF-8编码为bytes。含有中文的str无法用ASCII编码，因为中文编码的范围超过了ASCII编码的范围，Python会报错。</p>
+<p>在bytes中，无法显示为ASCII字符的字节，用\x##显示。</p>
+<p><strong>反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> b&apos;ABC&apos;.decode(&apos;ascii&apos;)</div><div class="line">&apos;ABC&apos;</div><div class="line"></div><div class="line"> b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;.decode(&apos;utf-8&apos;)</div><div class="line">&apos;中文&apos;</div></pre></td></tr></table></figure></p>
+<p>要计算str包含多少个字符，可以用len()函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">len(&apos;ABC&apos;)</div><div class="line">3</div><div class="line"></div><div class="line">len(&apos;中文&apos;)</div><div class="line">2</div></pre></td></tr></table></figure></p>
+<p>len()函数计算的是str的字符数，如果换成bytes，len()函数就计算字节数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">len(b&apos;ABC&apos;)</div><div class="line">3</div><div class="line"></div><div class="line">len(b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;)</div><div class="line">6</div><div class="line"></div><div class="line">len(&apos;中文&apos;.encode(&apos;utf-8&apos;))</div><div class="line">6</div></pre></td></tr></table></figure></p>
+<p>可见，1个中文字符经过UTF-8编码后通常会占用3个字节，而1个英文字符只占用1个字节。</p>
+<p>在操作字符串时，我们经常遇到str和bytes的互相转换。为了避免乱码问题，应当始终坚持使用UTF-8编码对str和bytes进行转换。</p>
+<p>由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码读取，我们通常在文件开头写上这两行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python3</div><div class="line"># -*- coding: utf-8 -*-</div></pre></td></tr></table></figure></p>
+<p>第一行注释是为了告诉Linux/OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释；</p>
+<p>第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码。</p>
+<p><strong>申明了UTF-8编码并不意味着你的.py文件就是UTF-8编码的，必须并且要确保文本编辑器正在使用<code>UTF-8 without BOM</code>编码：</strong></p>
+<p>摘录自:<a href="http://www.jianshu.com/p/1cb5ac8d8a6e?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">链接</a></p>
+<p><strong>摘录自:</strong><a href="http://www.jianshu.com/p/1cb5ac8d8a6e?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">链接</a></p>
 ]]></content>
     </entry>
     
