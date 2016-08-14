@@ -38,7 +38,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,99,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,99,4,5,6]</div></pre></td></tr></table></figure>
 <p><strong>最后,看一下列表之间想达到传值的效果</strong>:把列表a的值传给列表b,列表b的值变了,列表a的值不会改变,采取方法,传的列表后面加上[:],相当于用[:]就是把a列表的值复制了,并传给列表b</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a[:]</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,3,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6]</div></pre></td></tr></table></figure>
-<h5 id="列表的切片处理"><a href="#列表的切片处理" class="headerlink" title="列表的切片处理:"></a>列表的切片处理:</h5><p>方括号里用冒号[:],前面跟不同的整数<br>切片的特点:前闭后开,即前面包括,后面不包括<br><strong>列表的切片</strong></p>
+<h5 id="列表的切片处理"><a href="#列表的切片处理" class="headerlink" title="列表的切片处理:"></a>列表的切片处理:</h5><p>方括号里用冒号[:],前面跟不同的整数<br>切片的特点:前闭后开,即前面包括,后面不包括<br><strong> 列表的切片</strong></p>
 <ul>
 <li>切取第N个(包括第N个)元素到最后一个元素,方法:[N:]**</li>
 </ul>
@@ -75,15 +75,14 @@
 <li>切片特点:前闭后开(即前面包括后面不包括)</li>
 <li>字符串不能直接添加(追加)\插入\修改\删除字符,其他切片功能与列表相似</li>
 </ul>
-<p>#####字符串的运用<br><strong>字符串与列表相同之处:切片完全一样</strong></p>
+<h5 id="字符串的运用"><a href="#字符串的运用" class="headerlink" title="字符串的运用"></a>字符串的运用</h5><p><strong>字符串与列表相同之处:切片完全一样</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a=&apos;abcdefg&apos;</div><div class="line">b=a[2]   #结果为: c</div><div class="line">c=a[2:]  #结果为: cdefg</div><div class="line">d=a[:2]   #结果为: ab</div><div class="line">e=a[2:5]  #结果为: cde</div><div class="line">f=a[2:-3]  #结果为: cd</div><div class="line">g=a[::1]   #结果为: abcdefg,相当于复制,未切片</div><div class="line">h=a[::-1]  #结果为:gfedcba,全部倒序排列</div><div class="line">i=a[::-2]  #结果为:geca,倒序跳着间隔一个,即间隔(含)两个切取</div></pre></td></tr></table></figure>
 <p><strong>字符串与列表不一样的地方:无如下编辑功能</strong></p>
 <blockquote>
 <p>j=a.append()   #字符串跟列表不一样,无append这个添加元素功能<br>k=a.insert(1,’x’)  #字符串跟列表不一样,无insert这个插入元素功能<br>l=a.pop(0)  #字符串跟列表不一样,无pop这个删除元素功能<br>a[1]=’x’   #字符串跟列表不一样,无修改元素的功能</p>
 </blockquote>
 <h3 id="元组-touple"><a href="#元组-touple" class="headerlink" title="元组:touple"></a>元组:touple</h3><p> 元组用<code>()</code>表示,里面的元素用<code>,</code>隔开</p>
-<p>####元组的特点：</p>
-<ul>
+<h4 id="元组的特点："><a href="#元组的特点：" class="headerlink" title="元组的特点："></a>元组的特点：</h4><ul>
 <li>元组元素的索引、切片方法跟列表一样如:</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=(1,2,3,4,5)   #初始化元组</div><div class="line">b=a[2]</div><div class="line">print(b) #结果为：</div><div class="line">3</div></pre></td></tr></table></figure>
