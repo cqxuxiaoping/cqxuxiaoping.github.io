@@ -1,0 +1,1129 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,笔记,组合数据类型,字符串,列表,元组,集合,字典," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="序列类型列表:list列表的特点:
+用方括号[]括起来
+内容的元素用逗号”,”间隔开
+各元素可以是各种数据类型:字符型,整数型,浮点型,列表,字典,均可
+列表内元素的下标是0
+
+列表的运用列表元素的索引:取列表中的元素1234567a=[1,2,&amp;apos;adggd&amp;apos;,3,[&amp;apos;x&amp;apos;,&amp;apos;y&amp;apos;,&amp;apos;z&amp;apos;],4,5]    #此为初始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记(4):常用的组合数据类型">
+<meta property="og:url" content="http://cqxuxiaoping/github.io/2016/08/14/Python学习笔记(4)常用的组合数据类型/index.html">
+<meta property="og:site_name" content="表哥的Blog">
+<meta property="og:description" content="序列类型列表:list列表的特点:
+用方括号[]括起来
+内容的元素用逗号”,”间隔开
+各元素可以是各种数据类型:字符型,整数型,浮点型,列表,字典,均可
+列表内元素的下标是0
+
+列表的运用列表元素的索引:取列表中的元素1234567a=[1,2,&amp;apos;adggd&amp;apos;,3,[&amp;apos;x&amp;apos;,&amp;apos;y&amp;apos;,&amp;apos;z&amp;apos;],4,5]    #此为初始">
+<meta property="og:updated_time" content="2016-08-14T09:23:49.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python学习笔记(4):常用的组合数据类型">
+<meta name="twitter:description" content="序列类型列表:list列表的特点:
+用方括号[]括起来
+内容的元素用逗号”,”间隔开
+各元素可以是各种数据类型:字符型,整数型,浮点型,列表,字典,均可
+列表内元素的下标是0
+
+列表的运用列表元素的索引:取列表中的元素1234567a=[1,2,&amp;apos;adggd&amp;apos;,3,[&amp;apos;x&amp;apos;,&amp;apos;y&amp;apos;,&amp;apos;z&amp;apos;],4,5]    #此为初始">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://cqxuxiaoping/github.io/2016/08/14/Python学习笔记(4)常用的组合数据类型/"/>
+
+  <title> Python学习笔记(4):常用的组合数据类型 | 表哥的Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">表哥的Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Used for personal learning notes and sharing.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python学习笔记(4):常用的组合数据类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-14T17:14:55+08:00" content="2016-08-14">
+              2016-08-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/14/Python学习笔记(4)常用的组合数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/Python学习笔记(4)常用的组合数据类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/14/Python学习笔记(4)常用的组合数据类型/" class="leancloud_visitors" data-flag-title="Python学习笔记(4):常用的组合数据类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="序列类型"><a href="#序列类型" class="headerlink" title="序列类型"></a>序列类型</h2><h3 id="列表-list"><a href="#列表-list" class="headerlink" title="列表:list"></a>列表:list</h3><h4 id="列表的特点"><a href="#列表的特点" class="headerlink" title="列表的特点:"></a>列表的特点:</h4><ul>
+<li>用方括号[]括起来</li>
+<li>内容的元素用逗号”,”间隔开</li>
+<li>各元素可以是各种数据类型:字符型,整数型,浮点型,列表,字典,均可</li>
+<li>列表内元素的下标是0</li>
+</ul>
+<h4 id="列表的运用"><a href="#列表的运用" class="headerlink" title="列表的运用"></a>列表的运用</h4><h5 id="列表元素的索引-取列表中的元素"><a href="#列表元素的索引-取列表中的元素" class="headerlink" title="列表元素的索引:取列表中的元素"></a>列表元素的索引:取列表中的元素</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,&apos;adggd&apos;,3,[&apos;x&apos;,&apos;y&apos;,&apos;z&apos;],4,5]    #此为初始化列表</div><div class="line">print(a)</div><div class="line">[1,2,&apos;adggd&apos;,3,[&apos;x&apos;,&apos;y&apos;,&apos;z&apos;],4,5]</div><div class="line"> print(a[2])</div><div class="line">adggd</div><div class="line">print(a[4][1])      #要取列表中第几个元素,就在列表名后用方括号里面输入第几(注意:下标是0开始)</div><div class="line">y</div></pre></td></tr></table></figure>
+<h5 id="列表元素的编辑"><a href="#列表元素的编辑" class="headerlink" title="列表元素的编辑"></a>列表元素的编辑</h5><ul>
+<li>列表元素的添加:在最后添加一个元素,用: 列表名.append(新元素)—<strong>对比:字符串无append这个添加功能</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">a.append(&quot;ok&quot;)</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6,&quot;ok&quot;]</div></pre></td></tr></table></figure>
+<ul>
+<li>列表元素的插入:在列表元素中间或最前面插入一个新元素,用: 列表名.insert(插入位置,新插入的元素)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">a.insert(4,100)    #在列表的第四个元素位置插入整数100</div><div class="line">print(a)</div><div class="line">[1,2,3,4,100,5,6]</div><div class="line">a.insert(0,999)   #再在列表的第0个元素位置(即最前面 )插入整数999</div><div class="line">print(a)</div><div class="line">[999,1,2,3,4,100,5,6]</div></pre></td></tr></table></figure>
+<ul>
+<li>列表元素的修改:用赋值的方式,将第几个元素修改</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">a[2]=688    #将第3个元素即整数&apos;3&apos;修改为整数&apos;688&apos;</div><div class="line">print(a)</div><div class="line">[1,2,688,4,5,6]</div></pre></td></tr></table></figure>
+<ul>
+<li>列表元素的删除:列表名.pop(元素位置)</li>
+</ul>
+<p><strong>删除最后一位元素:列表名.pop(),里面为空</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">a.pop()    #将最后那个元素删除</div><div class="line">print(a)</div><div class="line">[]1,2,3,4,5]</div></pre></td></tr></table></figure>
+<p><strong>删除第N位元素:列表名.pop(N)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">a.pop(3)    #将第4元素删除</div><div class="line">print(a)</div><div class="line">=[1,2,3,5,6]</div></pre></td></tr></table></figure>
+<h5 id="列表地址的传引用-相当于”传址”"><a href="#列表地址的传引用-相当于”传址”" class="headerlink" title="列表地址的传引用,相当于”传址”"></a>列表地址的传引用,相当于”传址”</h5><p><strong>首先,对比一下变量之间传值的区别</strong>:把变量a的值传给变量b,变量b的值变了,变量a的值不会改变,这叫”传值”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=123 </div><div class="line">b=a</div><div class="line">b=456</div><div class="line">print(b)</div><div class="line">456</div><div class="line">print(a)</div><div class="line">123</div></pre></td></tr></table></figure>
+<p><strong>其次,看一下列表之间传引用的区别</strong>:把列表a的传引用地址传给变量b,变量b的值变了,变量a的也会发生改变,这叫”传引用”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,99,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,99,4,5,6]</div></pre></td></tr></table></figure>
+<p><strong>最后,看一下列表之间想达到传值的效果</strong>:把列表a的值传给列表b,列表b的值变了,列表a的值不会改变,采取方法,传的列表后面加上[:],相当于用[:]就是把a列表的值复制了,并传给列表b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a[:]</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,3,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6]</div></pre></td></tr></table></figure>
+<h5 id="列表的切片处理"><a href="#列表的切片处理" class="headerlink" title="列表的切片处理:"></a>列表的切片处理:</h5><p>方括号里用冒号[:],前面跟不同的整数<br>切片的特点:前闭后开,即前面包括,后面不包括<br><strong>列表的切片</strong></p>
+<ul>
+<li>切取第N个(包括第N个)元素到最后一个元素,方法:[N:]**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[2:]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6,7]</div><div class="line">print(b)</div><div class="line">[3,4,5,6,7]</div></pre></td></tr></table></figure>
+<ul>
+<li>切取最前面的元素到第N个前面(不包括第N个)那个元素,方法:[:N]**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[:2]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6,7]</div><div class="line">print(b)</div><div class="line">[1,2]</div></pre></td></tr></table></figure>
+<ul>
+<li>切取第N个(包括第N个)到第M个(不包括第M个)之间的元素,方法:[N:M]**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[2:5]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6,7]</div><div class="line">print(b)</div><div class="line">[3,4,5]</div></pre></td></tr></table></figure>
+<ul>
+<li>切取倒数第N个元素,方法:[-N]**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[-1]</div><div class="line">print(b)</div><div class="line">7</div><div class="line">c=a[-2]</div><div class="line">print(c)</div><div class="line">6</div></pre></td></tr></table></figure>
+<ul>
+<li>切取第N个(包括N)到倒数第M个(不包括M)元素,方法:[N,-M]**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[2:-2]</div><div class="line">print(b)</div><div class="line">[3,4,5,6]</div></pre></td></tr></table></figure>
+<ul>
+<li>步进式跳着切取元素,在切片后面用冒号<code>:</code>,紧跟步进数值,方法:[M:N:K],<code>K</code>为步长**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">print(a[2:6:2])  #从第三个元素3(含)切片到第七个元素7(不含),步长为2,即隔一个元素切取</div><div class="line">[3,5]</div><div class="line">b=a[:]  #结果还是为:[1,2,3,4,5,6,7],相当于复制,未切片,见前面&quot;**列表传址引用**&quot;</div><div class="line">[1,2,3,4,5,6,7]</div><div class="line">b=a[::]  #结果还是为:[1,2,3,4,5,6,7],相当于复制,未切片</div><div class="line">[1,2,3,4,5,6,7]</div><div class="line">b=a[::1]   #步长为1,结果还是为:[1,2,3,4,5,6,7],相当于复制,未切片</div><div class="line">[1,2,3,4,5,6,7]</div><div class="line">c=a[::2]   #结果为:[1,3,5,7],全部切片,步长值为2,即隔一个元素切片</div><div class="line">[1,3,5,7]</div><div class="line">d=a[::3]   #结果为:[1,4,7]</div><div class="line">[1,4,7]</div></pre></td></tr></table></figure>
+<ul>
+<li>元素倒序排列,方法:[::-N]**</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[::-1]   #结果为:</div><div class="line">[7, 6, 5, 4, 3, 2, 1]</div><div class="line">c=a[::-2]   #结果为:</div><div class="line">[7, 5, 3, 1]</div><div class="line">d=a[::-3]   #结果为:</div><div class="line">[7, 4, 1]</div></pre></td></tr></table></figure>
+<h3 id="字符串-string"><a href="#字符串-string" class="headerlink" title="字符串:string"></a>字符串:string</h3><h4 id="字符串的特点"><a href="#字符串的特点" class="headerlink" title="字符串的特点:"></a>字符串的特点:</h4><h5 id="列表的特点及与列表相比的区别"><a href="#列表的特点及与列表相比的区别" class="headerlink" title="列表的特点及与列表相比的区别:"></a>列表的特点及与列表相比的区别:</h5><ul>
+<li>用单引号’’或双引号””引起来—而列表是用方括号[]括起来</li>
+<li>内容的元素不用需用逗号间隔开—而列表必须用逗号”,”间隔开</li>
+<li>各元素是字符型—而列表的元素可以是各种数据类型:字符型,整数型,浮点型,列表,字典均可</li>
+<li>字符串内元素的下标是0—列表也一样</li>
+<li>切片特点:前闭后开(即前面包括后面不包括)</li>
+<li>字符串不能直接添加(追加)\插入\修改\删除字符,其他切片功能与列表相似</li>
+</ul>
+<p>#####字符串的运用<br><strong>字符串与列表相同之处:切片完全一样</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a=&apos;abcdefg&apos;</div><div class="line">b=a[2]   #结果为: c</div><div class="line">c=a[2:]  #结果为: cdefg</div><div class="line">d=a[:2]   #结果为: ab</div><div class="line">e=a[2:5]  #结果为: cde</div><div class="line">f=a[2:-3]  #结果为: cd</div><div class="line">g=a[::1]   #结果为: abcdefg,相当于复制,未切片</div><div class="line">h=a[::-1]  #结果为:gfedcba,全部倒序排列</div><div class="line">i=a[::-2]  #结果为:geca,倒序跳着间隔一个,即间隔(含)两个切取</div></pre></td></tr></table></figure>
+<p><strong>字符串与列表不一样的地方:无如下编辑功能</strong></p>
+<blockquote>
+<p>j=a.append()   #字符串跟列表不一样,无append这个添加元素功能<br>k=a.insert(1,’x’)  #字符串跟列表不一样,无insert这个插入元素功能<br>l=a.pop(0)  #字符串跟列表不一样,无pop这个删除元素功能<br>a[1]=’x’   #字符串跟列表不一样,无修改元素的功能</p>
+</blockquote>
+<h3 id="元组-touple"><a href="#元组-touple" class="headerlink" title="元组:touple"></a>元组:touple</h3><p> 元组用<code>()</code>表示,里面的元素用<code>,</code>隔开</p>
+<p>####元组的特点：</p>
+<ul>
+<li>元组元素的索引、切片方法跟列表一样如:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=(1,2,3,4,5)   #初始化元组</div><div class="line">b=a[2]</div><div class="line">print(b) #结果为：</div><div class="line">3</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=(1,2,3,4,5)   #初始化元组</div><div class="line">b=a[2:4]</div><div class="line">print(b) #结果为：</div><div class="line">(3,4)</div></pre></td></tr></table></figure>
+<ul>
+<li>元组内元素不能直接用append,insert,赋值等方式修改<br>元组内元素若要修改，需要先转成列表（list），修改后再从列表转为元组(tuple)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a=(1,2,3,4,5,6)</div><div class="line">b=list(a)  #元组转换为了列表b：[1, 2, 3, 4, 5, 6]</div><div class="line">print(b)</div><div class="line">[1, 2, 3, 4, 5, 6]</div><div class="line">b[2]=99   #用赋值的方式，将列表b第二个元素3修改为99</div><div class="line">c=tuple(b)  #又将列表b转换在元组c:(1, 2, 99, 4, 5, 6)</div><div class="line">print(c)</div><div class="line">(1, 2, 99, 4, 5, 6)</div></pre></td></tr></table></figure>
+<p>元组内的元素若是列表,则可以对里面的列表元素内的列表元素进行修改:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a=(1,2,3,4,[“X”,”y”,”z”],6)</div><div class="line">a[4][1]=”此处修改了”</div><div class="line">print(a)</div><div class="line">(1,2,3,4,[“X”,” 此处修改了”,”z”],6)</div><div class="line">#说明,这里并不是元组的元素被修改了,而是对应元素的列表引用里面的元素被修改了</div></pre></td></tr></table></figure></p>
+<ul>
+<li>元组的初始化:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">A=()  #初始化一个空元组</div><div class="line">B=(“hello”,)   #初始化只有一个元素的元组</div><div class="line">&apos;&apos;&apos;注意一定加逗号`,`若不加逗号`,`,圆括号里面的数据是什么类型,那么初始化的B就是什么类型,而不是元组;</div><div class="line">比如B=(“hello”)就是字符型,B=(4)就是整数int型&apos;&apos;&apos;,而不是元组</div></pre></td></tr></table></figure>
+<h2 id="映射类型"><a href="#映射类型" class="headerlink" title="映射类型"></a>映射类型</h2><h3 id="字典-dict"><a href="#字典-dict" class="headerlink" title="字典:dict"></a>字典:dict</h3><h4 id="字典的特点"><a href="#字典的特点" class="headerlink" title="字典的特点:"></a>字典的特点:</h4><ul>
+<li>字典<code>dict</code>,全称<code>dictionary</code>，在其他语言中也称为<code>map</code>，使用键:值（key:value）存储，具有极快的查找速度。</li>
+<li>书写方式用花括号括起来，都是成对出现，前者为key(键值)，后者为value(值)</li>
+<li>字典内的各组key和value无序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;a&apos;:&apos;xyz&apos;,&apos;b&apos;:123,&apos;c&apos;:23.15&#125;</div><div class="line">print(a)    #打印出来实际为如下等多种顺序</div><div class="line">&#123;&apos;c&apos;: 23.15, &apos;a&apos;: &apos;xyz&apos;, &apos;b&apos;: 123&#125;</div></pre></td></tr></table></figure>
+<h4 id="字典value读取的方式："><a href="#字典value读取的方式：" class="headerlink" title="字典value读取的方式："></a>字典value读取的方式：</h4><ul>
+<li>方式一：<code>key</code>方式:<br>若读取没有的key,则程序将报错</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;a&apos;:&apos;xyz&apos;,&apos;b&apos;:123,&apos;c&apos;:23.15&#125;</div><div class="line">print(a[&apos;a&apos;])   #结果为：</div><div class="line">xyz</div><div class="line">print(a[&apos;e&apos;])  #读取没有的key:&apos;e&apos;时，程序会报错：</div><div class="line">KeyError: &apos;e&apos;</div></pre></td></tr></table></figure>
+<ul>
+<li>方式二：<code>get</code>方式:<br>若读取没有的key，则程序不会报错，而是打印结果：None,或自定义提示信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;a&apos;:&apos;xyz&apos;,&apos;b&apos;:123,&apos;c&apos;:23.15&#125;</div><div class="line">print(a.get(&apos;b&apos;))  #结果为：</div><div class="line">123</div><div class="line">print(a.get(&apos;e&apos;))  #打印结果：</div><div class="line">None</div><div class="line">print(a.get(&apos;e&apos;,&apos;没有找到!&apos;))   #打印结果：</div><div class="line">没有找到!</div></pre></td></tr></table></figure>
+<h4 id="字典的items-方法"><a href="#字典的items-方法" class="headerlink" title="字典的items()方法:"></a>字典的items()方法:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;a&apos;:&apos;xyz&apos;,&apos;b&apos;:123,&apos;c&apos;:23.15&#125;</div><div class="line">k=a.items()</div><div class="line">print(k)  #结果为:</div><div class="line">dict_items([(&apos;b&apos;, 123), (&apos;a&apos;, &apos;xyz&apos;), (&apos;c&apos;, 23.15)])   #注意:此处顺序会变,因为字典的无序性,下面结果也会变</div><div class="line">print(list(k))  #结果为元素是元组的列表或别的顺序列表:</div><div class="line">[(&apos;c&apos;, 23.15), (&apos;b&apos;, 123), (&apos;a&apos;, &apos;xyz&apos;)] </div><div class="line">print(list(k)[1]) #结果为上面列表的第一个元素的元组或别的顺序元组</div><div class="line">(&apos;a&apos;, &apos;xyz&apos;) </div><div class="line">print(list(k)[1][1]) #结果为上面元组的第一个元素 或别的</div><div class="line">xyz</div></pre></td></tr></table></figure>
+<h4 id="in判断键值key是否在字典中"><a href="#in判断键值key是否在字典中" class="headerlink" title="in判断键值key是否在字典中:"></a><code>in</code>判断键值<code>key</code>是否在字典中:</h4><p> <code>in</code>方式,可判断相应的键值<code>key</code>是否在此字典之中,若在则返回<code>True</code>,若不在则返回<code>False</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;a&apos;:&apos;xyz&apos;,&apos;b&apos;:123,&apos;c&apos;:23.15&#125;</div><div class="line">&apos;b&apos; in a</div><div class="line">True</div><div class="line">&apos;d&apos; in a </div><div class="line">False</div></pre></td></tr></table></figure>
+<h4 id="字典元素的增减"><a href="#字典元素的增减" class="headerlink" title="字典元素的增减"></a>字典元素的增减</h4><ul>
+<li>字典元素的添加:是以新赋值的方式实现</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;x&apos;:&apos;how&apos;,&apos;y&apos;:&apos;are&apos;&#125;</div><div class="line">a[&apos;z&apos;]=&apos;you ?&apos; #给新KEY赋值的方式添加字典元素</div><div class="line">print(a)</div><div class="line">&#123;&apos;z&apos;:&apos;you ?&apos;,&apos;x&apos;:&apos;how&apos;,&apos;y&apos;:&apos;are&apos;&#125;  #字典是无序的,随时打印出来的位置会变</div></pre></td></tr></table></figure>
+<ul>
+<li>字典元素的删除<br>用pop()方法删除相应的<code>key</code>,其<code>value</code>也一块删除</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=&#123;&apos;x&apos;:123,&apos;y&apos;:456,&apos;z&apos;:&apos;wow&apos;&#125;</div><div class="line">a.pop(&apos;z&apos;)</div><div class="line">print(a)  #结果为:</div><div class="line">&#123;&apos;x&apos;: 123, &apos;y&apos;: 456&#125;</div></pre></td></tr></table></figure>
+<h4 id="由元组构成的列表-可以转成字典"><a href="#由元组构成的列表-可以转成字典" class="headerlink" title="由元组构成的列表,可以转成字典"></a>由元组构成的列表,可以转成字典</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a=[(&apos;b&apos;, 123), (&apos;a&apos;, &apos;xyz&apos;), (&apos;c&apos;, 23.15)]</div><div class="line">b=dict(a)</div><div class="line">print(b)  #结果为: ,顺序会变</div><div class="line"> &#123;&apos;a&apos;: &apos;xyz&apos;, &apos;b&apos;: 123, &apos;c&apos;: 23.15&#125;</div><div class="line">print(b[&apos;b&apos;]) #结果为:123 ,取出key&apos;b&apos;对应的value</div><div class="line">123</div></pre></td></tr></table></figure>
+<h4 id="字典和列表比较，各自的特点："><a href="#字典和列表比较，各自的特点：" class="headerlink" title="字典和列表比较，各自的特点："></a>字典和列表比较，各自的特点：</h4><h5 id="字典的特点-1"><a href="#字典的特点-1" class="headerlink" title="字典的特点:"></a>字典的特点:</h5><ul>
+<li>查找和插入的速度极快，不会随着key的增加而变慢；</li>
+<li>需要占用大量的内存，内存浪费多。</li>
+</ul>
+<h5 id="列表list的特点"><a href="#列表list的特点" class="headerlink" title="列表list的特点:"></a>列表<code>list</code>的特点:</h5><ul>
+<li>查找和插入的时间随着元素的增加而增加；</li>
+<li>占用空间小，浪费内存很少。<br><strong>所以，dict是用空间来换取时间的一种方法。</strong></li>
+</ul>
+<h2 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h2><h3 id="集合-set"><a href="#集合-set" class="headerlink" title="集合:set"></a>集合:set</h3><h4 id="集合的特点"><a href="#集合的特点" class="headerlink" title="集合的特点:"></a>集合的特点:</h4><ul>
+<li>用花括号,元素间用逗号隔开</li>
+<li>转换成集合用:set</li>
+<li>集合<code>set</code>和字典<code>dict</code>类似，也是一组<code>key</code>的集合，不同的是集合不存储<code>value</code>。由于<code>key</code>不能重复，所以，在集合<code>set</code>中，没有重复的<code>key</code>。</li>
+<li><p><strong>因为由于<code>key</code>不能重复,集合元素的唯一性,所以集合元素不能是可变对象如列表,即列表不能作为集合元素,否则会报错.</strong>试试看:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=&#123;1,2[3,4]&#125;</div><div class="line">#TypeError:unhashable Typle:&apos;list&apos;  #错误的类型:列表</div></pre></td></tr></table></figure>
+</li>
+<li><p>集合的无序性:集合里面的元素是无序性的,不能直接索引,如:a={1,2,3,4,5},无法通过a[2]的方式索引到里面的元素”3”</p>
+</li>
+<li>集合的单一性:集合里的元素均是唯一的,不会重复,用此功能,可以将列表转换为集合去重,再转换为列表使用的功能</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,2,2,3,4,5,6]  #先初始化一个列表a</div><div class="line">b=set(a)  #将列表a转换为集合b,同时去重</div><div class="line">print(b)  #打印结果为:</div><div class="line">&#123;1, 2, 3, 4, 5, 6&#125;</div><div class="line">a=list(b)  #将集合b转换为列表a:[1, 2, 3, 4, 5, 6],已将重复的&quot;2&quot;去掉</div><div class="line">print(a)</div><div class="line">[1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure>
+<h4 id="集合的三种操作"><a href="#集合的三种操作" class="headerlink" title="集合的三种操作"></a>集合的三种操作</h4><ul>
+<li>集合的交集,即求同:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a=[1,2,2,2,3,4,5,6,7]  #初始化列表a</div><div class="line">b=[1,2,3,4,5,6,7,8,9]  #初始化列表b</div><div class="line">c=set(a)&amp;set(b)   #列表a及列表b转换成集合,求交集</div><div class="line">print(c)  #结果为:</div><div class="line">&#123;1, 2, 3, 4, 5, 6, 7&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>集合的并集,即合并,把所有相同及不同的元素合并在一起,接上示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">d=set(a)|set(b)</div><div class="line">print(d)  #结果为:</div><div class="line">&#123;1, 2, 3, 4, 5, 6, 7, 8, 9&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>集合的求异:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e=set(b)-set(a)</div><div class="line">print(e)  #结果为:&#123;8, 9&#125;,即把b列表在a列表中没有的元素找出来</div></pre></td></tr></table></figure>
+<h4 id="集合的编辑"><a href="#集合的编辑" class="headerlink" title="集合的编辑"></a>集合的编辑</h4><ul>
+<li>通过add(key)方法可以添加元素到set中，可以重复添加，但不会有效果：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">s = set([1, 1, 2, 2, 3, 3])</div><div class="line">s</div><div class="line">&#123;1, 2, 3&#125;  #有重复元素的列表,转换为集合后去重</div><div class="line">s.add(4)  #添加一个元素`4`</div><div class="line">s</div><div class="line">&#123;1, 2, 3, 4&#125;</div><div class="line"> s.add(4)  #重复添加&apos;4&apos;，但不会有效果</div><div class="line"> s</div><div class="line">&#123;1, 2, 3, 4&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>通过remove(key)方法可以删除集合的指定元素：接上示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">s.remove(4)  #把元素&apos;4&apos;删除</div><div class="line">s</div><div class="line">&#123;1, 2, 3&#125;</div></pre></td></tr></table></figure>
+<h2 id="组合数据类型之间的转换"><a href="#组合数据类型之间的转换" class="headerlink" title="组合数据类型之间的转换"></a>组合数据类型之间的转换</h2><h3 id="列表与字符串的转换"><a href="#列表与字符串的转换" class="headerlink" title="列表与字符串的转换"></a>列表与字符串的转换</h3><h4 id="列表转为字符串："><a href="#列表转为字符串：" class="headerlink" title="列表转为字符串："></a>列表转为字符串：</h4><ul>
+<li>处理方法：  拼接符.join(列表名)</li>
+<li>注意：元素为数值等类型如[1,2,3]这类列表，不能直接拼接</li>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[&apos;x&apos;,&apos;y&apos;,&apos;z&apos;]</div><div class="line">b=&apos;&apos;.join(a)    #结果是：</div><div class="line">&apos;xyz&apos;</div><div class="line">c=&apos;*&apos;.join(a)   #结果是：</div><div class="line">&apos;x*y*z&apos;</div><div class="line">print(b)</div><div class="line">print(c)</div></pre></td></tr></table></figure>
+<h4 id="字符串转为列表"><a href="#字符串转为列表" class="headerlink" title="字符串转为列表"></a>字符串转为列表</h4><ul>
+<li>条件：字符串内，字符之间要有明显的分隔符</li>
+<li>处理方法：字符串名.split(‘分隔符’)</li>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=&apos;Q_W_E_R_T&apos;</div><div class="line">b=a.split(&apos;_&apos;)</div><div class="line">print(b)  #结果为：</div><div class="line">[&apos;Q&apos;, &apos;W&apos;, &apos;E&apos;, &apos;R&apos;, &apos;T&apos;]</div></pre></td></tr></table></figure>
+<h3 id="由成对元素组成的元组所构成的列表-可以转成字典"><a href="#由成对元素组成的元组所构成的列表-可以转成字典" class="headerlink" title="由成对元素组成的元组所构成的列表,可以转成字典"></a>由成对元素组成的元组所构成的列表,可以转成字典</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a=[(&apos;b&apos;, 123), (&apos;a&apos;, &apos;xyz&apos;), (&apos;c&apos;, 23.15)]</div><div class="line">b=dict(a)</div><div class="line">print(b)  #结果为: ,顺序会变</div><div class="line"> &#123;&apos;a&apos;: &apos;xyz&apos;, &apos;b&apos;: 123, &apos;c&apos;: 23.15&#125;</div><div class="line">print(b[&apos;a&apos;]) #结果为:123 ,取出`key&apos;:`b&apos;对应的value</div><div class="line">xyz</div></pre></td></tr></table></figure>
+<h3 id="列表list、元组tuple、集合set之间相互转换"><a href="#列表list、元组tuple、集合set之间相互转换" class="headerlink" title="列表list、元组tuple、集合set之间相互转换"></a>列表<code>list</code>、元组<code>tuple</code>、集合<code>set</code>之间相互转换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3]</div><div class="line">b=(4,5,6)</div><div class="line">c=&#123;7,8,9&#125;</div></pre></td></tr></table></figure>
+<h4 id="元组、集合转换成列表list"><a href="#元组、集合转换成列表list" class="headerlink" title="元组、集合转换成列表list"></a>元组、集合转换成列表<code>list</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">list(b)</div><div class="line">[4,5,6]</div><div class="line">list(c)</div><div class="line">[7,8,9]</div></pre></td></tr></table></figure>
+<h4 id="列表、集合转换成元组tuple"><a href="#列表、集合转换成元组tuple" class="headerlink" title="列表、集合转换成元组tuple"></a>列表、集合转换成元组<code>tuple</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tuple(a)</div><div class="line">(1,2,3)</div><div class="line">tuple(c)</div><div class="line">(8,9,7)  #因为`c`为集合,是无序组合,位置随时会变,转换时位置不固定</div></pre></td></tr></table></figure>
+<h4 id="列表、元组转换成集合set"><a href="#列表、元组转换成集合set" class="headerlink" title="列表、元组转换成集合set"></a>列表、元组转换成集合<code>set</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">set(a)</div><div class="line">&#123;1,2,3&#125;</div><div class="line">set(b)</div><div class="line">(4,5,6)</div></pre></td></tr></table></figure>
+<h2 id="神奇的加号”-”-即并集"><a href="#神奇的加号”-”-即并集" class="headerlink" title="神奇的加号”+”,即并集"></a>神奇的加号”+”,即并集</h2><ul>
+<li>列表+列表=列表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3]</div><div class="line">b=[4,5,6]</div><div class="line">c=a+b</div><div class="line">print(c)  #结果为:</div><div class="line">[1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure>
+<ul>
+<li>字符串+字符串=字符串</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a=&apos;abc&apos;</div><div class="line">b=&apos;xyz&apos;</div><div class="line">c=a+b</div><div class="line">print(c)  #结果为:</div><div class="line">abcxyz</div></pre></td></tr></table></figure>
+<ul>
+<li>元组+元组=元组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;)</div><div class="line">b=(1,2,3)</div><div class="line">c=a+b</div><div class="line">print(c)  #结果为:(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, 1, 2, 3)</div></pre></td></tr></table></figure>
+<ul>
+<li>注意:<br>–集合是不能加(+)的,因为两个集合里若有同一元素,根据集合的唯一性,会报错<br>–字典也不能加(+),因为为两个字典若有相同关键字(key),根据字典key的唯一性,也会报错</li>
+</ul>
+<p><strong>说明</strong>:此文摘录自:<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014316724772904521142196b74a3f8abf93d8e97c6ee6000" target="_blank" rel="external">链接</a>,并有添加,版权属于原作者。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
+          
+            <a href="/tags/组合数据类型/" rel="tag">#组合数据类型</a>
+          
+            <a href="/tags/字符串/" rel="tag">#字符串</a>
+          
+            <a href="/tags/列表/" rel="tag">#列表</a>
+          
+            <a href="/tags/元组/" rel="tag">#元组</a>
+          
+            <a href="/tags/集合/" rel="tag">#集合</a>
+          
+            <a href="/tags/字典/" rel="tag">#字典</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/07/Python学习笔记(3)变量与常量/" rel="next" title="Python学习笔记(3)变量与常量">
+                <i class="fa fa-chevron-left"></i> Python学习笔记(3)变量与常量
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/14/Python学习笔记(4)常用的组合数据类型/"
+           data-title="Python学习笔记(4):常用的组合数据类型" data-url="http://cqxuxiaoping/github.io/2016/08/14/Python学习笔记(4)常用的组合数据类型/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://b76.photo.store.qq.com/psb?/686023284/zRQNyHzM*o4UoXB4STu2X0Jz4GokMXpZ1GENfieIEPI!/b/YQSQYC3fhwAAYgFEUS2fiAAA&amp"
+               alt="表哥" />
+          <p class="site-author-name" itemprop="name">表哥</p>
+          <p class="site-description motion-element" itemprop="description">Life is to record.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序列类型"><span class="nav-number">1.</span> <span class="nav-text">序列类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表-list"><span class="nav-number">1.1.</span> <span class="nav-text">列表:list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表的特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">列表的特点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表的运用"><span class="nav-number">1.1.2.</span> <span class="nav-text">列表的运用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#列表元素的索引-取列表中的元素"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">列表元素的索引:取列表中的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表元素的编辑"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">列表元素的编辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表地址的传引用-相当于”传址”"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">列表地址的传引用,相当于”传址”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表的切片处理"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">列表的切片处理:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串-string"><span class="nav-number">1.2.</span> <span class="nav-text">字符串:string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的特点"><span class="nav-number">1.2.1.</span> <span class="nav-text">字符串的特点:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#列表的特点及与列表相比的区别"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">列表的特点及与列表相比的区别:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元组-touple"><span class="nav-number">1.3.</span> <span class="nav-text">元组:touple</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#映射类型"><span class="nav-number">2.</span> <span class="nav-text">映射类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字典-dict"><span class="nav-number">2.1.</span> <span class="nav-text">字典:dict</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字典的特点"><span class="nav-number">2.1.1.</span> <span class="nav-text">字典的特点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典value读取的方式："><span class="nav-number">2.1.2.</span> <span class="nav-text">字典value读取的方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典的items-方法"><span class="nav-number">2.1.3.</span> <span class="nav-text">字典的items()方法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in判断键值key是否在字典中"><span class="nav-number">2.1.4.</span> <span class="nav-text">in判断键值key是否在字典中:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典元素的增减"><span class="nav-number">2.1.5.</span> <span class="nav-text">字典元素的增减</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由元组构成的列表-可以转成字典"><span class="nav-number">2.1.6.</span> <span class="nav-text">由元组构成的列表,可以转成字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典和列表比较，各自的特点："><span class="nav-number">2.1.7.</span> <span class="nav-text">字典和列表比较，各自的特点：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字典的特点-1"><span class="nav-number">2.1.7.1.</span> <span class="nav-text">字典的特点:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表list的特点"><span class="nav-number">2.1.7.2.</span> <span class="nav-text">列表list的特点:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合类型"><span class="nav-number">3.</span> <span class="nav-text">集合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合-set"><span class="nav-number">3.1.</span> <span class="nav-text">集合:set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合的特点"><span class="nav-number">3.1.1.</span> <span class="nav-text">集合的特点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合的三种操作"><span class="nav-number">3.1.2.</span> <span class="nav-text">集合的三种操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合的编辑"><span class="nav-number">3.1.3.</span> <span class="nav-text">集合的编辑</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合数据类型之间的转换"><span class="nav-number">4.</span> <span class="nav-text">组合数据类型之间的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表与字符串的转换"><span class="nav-number">4.1.</span> <span class="nav-text">列表与字符串的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表转为字符串："><span class="nav-number">4.1.1.</span> <span class="nav-text">列表转为字符串：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串转为列表"><span class="nav-number">4.1.2.</span> <span class="nav-text">字符串转为列表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由成对元素组成的元组所构成的列表-可以转成字典"><span class="nav-number">4.2.</span> <span class="nav-text">由成对元素组成的元组所构成的列表,可以转成字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表list、元组tuple、集合set之间相互转换"><span class="nav-number">4.3.</span> <span class="nav-text">列表list、元组tuple、集合set之间相互转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#元组、集合转换成列表list"><span class="nav-number">4.3.1.</span> <span class="nav-text">元组、集合转换成列表list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表、集合转换成元组tuple"><span class="nav-number">4.3.2.</span> <span class="nav-text">列表、集合转换成元组tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表、元组转换成集合set"><span class="nav-number">4.3.3.</span> <span class="nav-text">列表、元组转换成集合set</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神奇的加号”-”-即并集"><span class="nav-number">5.</span> <span class="nav-text">神奇的加号”+”,即并集</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">表哥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"cqxuxiaoping"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("b1mne4U5osbMO5YwjFF5rcyx-gzGzoHsz", "KHhR1kRWPEQK85KtDJr0Gyz0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
