@@ -37,8 +37,8 @@
 <p><strong>其次,看一下列表之间传引用的区别</strong>:把列表a的传引用地址传给变量b,变量b的值变了,变量a的也会发生改变,这叫”传引用”</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,99,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,99,4,5,6]</div></pre></td></tr></table></figure>
 <p><strong>最后,看一下列表之间想达到传值的效果</strong>:把列表a的值传给列表b,列表b的值变了,列表a的值不会改变,采取方法,传的列表后面加上[:],相当于用[:]就是把a列表的值复制了,并传给列表b</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a[:]</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,3,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6]</div></pre></td></tr></table></figure>
-<h5 id="列表的切片处理"><a href="#列表的切片处理" class="headerlink" title="列表的切片处理:"></a>列表的切片处理:</h5><p>方括号里用冒号[:],前面跟不同的整数<br>切片的特点:前闭后开,即前面包括,后面不包括<br><strong> 列表的切片</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6]</div><div class="line">b=a[:]</div><div class="line">b[2]=99</div><div class="line">print(b)</div><div class="line">[1,2,99,4,5,6]</div><div class="line">print(a)</div><div class="line">[1,2,3,4,5,6]</div></pre></td></tr></table></figure>
+<h5 id="列表的切片处理"><a href="#列表的切片处理" class="headerlink" title="列表的切片处理:"></a>列表的切片处理:</h5><p>方括号里用冒号[:],前面跟不同的整数<br>切片的特点:前闭后开,即前面包括,后面不包括<br><strong>列表的切片</strong></p>
 <ul>
 <li>切取第N个(包括第N个)元素到最后一个元素,方法:[N:]**</li>
 </ul>
@@ -58,7 +58,7 @@
 <ul>
 <li>切取第N个(包括N)到倒数第M个(不包括M)元素,方法:[N,-M]**</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[2:-2]</div><div class="line">print(b)</div><div class="line">[3,4,5,6]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5,6,7]</div><div class="line">b=a[2:-2]</div><div class="line">print(b)</div><div class="line">[3,4,5]</div></pre></td></tr></table></figure>
 <ul>
 <li>步进式跳着切取元素,在切片后面用冒号<code>:</code>,紧跟步进数值,方法:[M:N:K],<code>K</code>为步长**</li>
 </ul>
