@@ -4,6 +4,70 @@
   
     
     <entry>
+      <title><![CDATA[Python学习笔记(6)条件判断与循环]]></title>
+      <url>http://cqxuxiaoping/github.io/2017/09/10/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(6)%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/</url>
+      <content type="html"><![CDATA[<h2 id="条件判断-if"><a href="#条件判断-if" class="headerlink" title="条件判断:if"></a>条件判断:<code>if</code></h2><blockquote>
+<p>条件判断格式<br>if &lt;条件判断1&gt;:<br>        &lt;执行1&gt;<br>elif &lt;条件判断2&gt;:<br>        &lt;执行2&gt;<br>elif &lt;条件判断3&gt;:<br>       &lt;执行3&gt;<br>else:<br>      &lt;执行4&gt;</p>
+</blockquote>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="第一种循环-for-in"><a href="#第一种循环-for-in" class="headerlink" title="第一种循环:for ...in..."></a>第一种循环:<code>for ...in...</code></h3><ul>
+<li>求从1到10累加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sum = 0</div><div class="line">for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:</div><div class="line">    sum = sum + x</div><div class="line">print(sum)</div><div class="line">55</div></pre></td></tr></table></figure>
+<ul>
+<li>求从0到10累加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sum = 0</div><div class="line">for x in range(11):</div><div class="line">    sum = sum + x</div><div class="line">print(sum)</div><div class="line">55</div></pre></td></tr></table></figure>
+<ul>
+<li>求从1到10累加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sum = 0</div><div class="line">for x in range(1,11):</div><div class="line">    sum = sum + x</div><div class="line">print(sum)</div><div class="line">55</div></pre></td></tr></table></figure>
+<h3 id="第二种循环-while"><a href="#第二种循环-while" class="headerlink" title="第二种循环:while....."></a>第二种循环:<code>while.....</code></h3><p>只要条件满足，就不断循环，条件不满足时退出循环<br>比如我们要计算100以内所有奇数之和</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sum = 0</div><div class="line">n = 99</div><div class="line">while n &gt; 0:</div><div class="line">    sum = sum + n</div><div class="line">    n = n - 2</div><div class="line">print(sum)</div><div class="line">2500</div></pre></td></tr></table></figure>
+<p>在循环内部变量n不断自减，直到变为-1时，不再满足while条件，循环退出。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Python学习笔记(5):逻辑操作符]]></title>
+      <url>http://cqxuxiaoping/github.io/2017/09/10/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5)%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6/</url>
+      <content type="html"><![CDATA[<p>##身份操作符</p>
+<ul>
+<li><code>is</code>/<code>is not</code>: 判断左端对象引用与否与右端对象引用相同</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#例如:分别判断a,b,c是否引用的同一对象:</div><div class="line">a = &apos;jick&apos;</div><div class="line">b = &apos;jick&apos;</div><div class="line">c = &apos;john&apos;</div><div class="line">a is b</div><div class="line">True</div><div class="line">a is c</div><div class="line">False</div><div class="line">a is not c</div><div class="line">True</div><div class="line">#上面虽然a与c的对象不一样,但两个对象实例化的类是一样的,比如:</div><div class="line">type(a) is type(c)</div><div class="line">True  #因为a和c均是字符型</div></pre></td></tr></table></figure>
+<ul>
+<li>也可以与None进行比较</li>
+</ul>
+<blockquote>
+<p>要理解这个，首先要理解Python对象：<br>python对象具有三个特性：身份、类型、值。<br>三特性在对象创建时被赋值。只有值可以改变，其他只读。<br>类型本身也是对象。</p>
+</blockquote>
+<p><strong>Null与None</strong></p>
+<blockquote>
+<p>是Python的特殊类型，Null对象或者是None Type，它只有一个值None.<br>它不支持任何运算也没有任何内建方法.<br>None和任何其他的数据类型比较永远返回False。<br>None有自己的数据类型NoneType。<br>你可以将None复制给任何变量，但是你不能创建其他NoneType对象。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">type(None)</div><div class="line">&lt;class &apos;NoneType&apos;&gt;</div><div class="line">None == 0</div><div class="line">False</div><div class="line">None == &apos; &apos;</div><div class="line">False</div><div class="line">None == None</div><div class="line">True</div><div class="line">None == False</div><div class="line">False</div></pre></td></tr></table></figure>
+<h2 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h2><ul>
+<li>大于:<code>&gt;</code></li>
+<li>小于:<code>&lt;</code></li>
+<li>大于等于:<code>&gt;=</code></li>
+<li>小于等于:<code>&lt;=</code></li>
+<li>不等于:<code>!=</code></li>
+<li>等于:<code>==</code></li>
+</ul>
+<h2 id="成员操作符"><a href="#成员操作符" class="headerlink" title="成员操作符"></a>成员操作符</h2><ul>
+<li><code>in</code></li>
+<li><code>not in</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=[1,2,3,4,5]</div><div class="line">1 in a</div><div class="line">True</div><div class="line">9 in a</div><div class="line">False</div><div class="line">9 not in a</div><div class="line">True</div></pre></td></tr></table></figure>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><ul>
+<li>与:<code>and</code></li>
+<li>或:<code>or</code></li>
+<li>非:<code>not</code></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python学习笔记(4):常用的组合数据类型]]></title>
       <url>http://cqxuxiaoping/github.io/2016/08/14/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(4)%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%84%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
       <content type="html"><![CDATA[<h2 id="序列类型"><a href="#序列类型" class="headerlink" title="序列类型"></a>序列类型</h2><h3 id="列表-list"><a href="#列表-list" class="headerlink" title="列表:list"></a>列表:list</h3><h4 id="列表的特点"><a href="#列表的特点" class="headerlink" title="列表的特点:"></a>列表的特点:</h4><ul>
