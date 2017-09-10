@@ -30,8 +30,7 @@
     <entry>
       <title><![CDATA[Python学习笔记(5):逻辑操作符]]></title>
       <url>http://cqxuxiaoping/github.io/2017/09/10/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5)%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6/</url>
-      <content type="html"><![CDATA[<p>##身份操作符</p>
-<ul>
+      <content type="html"><![CDATA[<h2 id="身份操作符"><a href="#身份操作符" class="headerlink" title="身份操作符"></a>身份操作符</h2><ul>
 <li><code>is</code>/<code>is not</code>: 判断左端对象引用与否与右端对象引用相同</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#例如:分别判断a,b,c是否引用的同一对象:</div><div class="line">a = &apos;jick&apos;</div><div class="line">b = &apos;jick&apos;</div><div class="line">c = &apos;john&apos;</div><div class="line">a is b</div><div class="line">True</div><div class="line">a is c</div><div class="line">False</div><div class="line">a is not c</div><div class="line">True</div><div class="line">#上面虽然a与c的对象不一样,但两个对象实例化的类是一样的,比如:</div><div class="line">type(a) is type(c)</div><div class="line">True  #因为a和c均是字符型</div></pre></td></tr></table></figure>
